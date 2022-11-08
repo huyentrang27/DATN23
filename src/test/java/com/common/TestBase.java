@@ -18,12 +18,10 @@ import static com.common.GlobalVariables.*;
 
 public class TestBase extends Utility {
     protected String pathFile = System.getProperty("user.dir");
-
     public static ExtentTest logSuite;
     public ExtentTest logClass;
     public ExtentTest logMethod;
     public ExtentTest logStep;
-
     public String testCaseName;
     public String testNameWithStatus;
     public static ArrayList<String> testCaseList = new ArrayList<String>();
@@ -47,12 +45,12 @@ public class TestBase extends Utility {
         }
 
         //Create report folder
-        TestReporter.logInfo(logSuite, "Thư mục chứa báo cáo: " + reportLocation);
+        TestReporter.logInfo(logSuite, "Report link: " + reportLocation);
         File folder = new File(reportLocation);
         folder.mkdirs();
 
-        TestReporter.logInfo(logSuite, "Trình duyệt: " + BROWSER);
-        TestReporter.logInfo(logSuite, "Số luồng thực thi: " + THREAD_COUNT);
+        TestReporter.logInfo(logSuite, "Browser: " + BROWSER);
+        TestReporter.logInfo(logSuite, "Thread count: " + THREAD_COUNT);
     }
 
     @BeforeClass
@@ -107,7 +105,7 @@ public class TestBase extends Utility {
         Object[][] data = getData(testCaseName, DataFilePath);
         if (data.length == 0) {
             logClass = TestReporter.createTestForExtentReport(report, testCaseName);
-            logClass.fail("Data: "+ testCaseName + " không tồn tại trong file data.json");
+            logClass.fail("Data: "+ testCaseName + " doesn't exist in file data.json");
             TOTAL_FAILED++;
         }
         return data;
@@ -120,7 +118,7 @@ public class TestBase extends Utility {
         Object[][] data = getData(testData, DataFilePath);
         if (data.length == 0) {
             logClass = TestReporter.createTestForExtentReport(report, testCaseName);
-            logClass.fail("Data: " + testData + " không tồn tại trong file data.json");
+            logClass.fail("Data: " + testData + " doesn't exist in file data.json");
             TOTAL_FAILED++;
         }
         return data;
