@@ -21,8 +21,4 @@ public class DataFaker {
         return df.format(now);
     }
 
-    public static String generateUserName(){
-        return "test_" + generatetimeStampString("MMddHHmmssSSS");
-    }
-
 }
