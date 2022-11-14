@@ -3,7 +3,7 @@ package com.pageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class TicketPricePage {
+public class TicketPricePage extends BasePage{
     /**
      * Elements
      */

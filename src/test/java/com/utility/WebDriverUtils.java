@@ -19,9 +19,13 @@ import static com.common.GlobalVariables.WAIT_TIME_60;
 public class WebDriverUtils extends Utility{
     public static void navigateToTestSite(ExtentTest logTest, String url){
         try {
-            TestReporter.logInfo(logTest, "Điều hướng đến: " + url);
+            TestReporter.logInfo(logTest, "Navigate to: " + url);
+            Utility.log4j.info("navigateToTestSite method start ...");
+
             WebDriverUtils.switchToWindowHandle();
             Utility.getDriver().navigate().to(url);
+
+            Utility.log4j.info("navigateToTestSite method start ...");
             WebDriverUtils.waitForPageLoaded();
         } catch (Exception e){
             Utility.log4j.error("navigateToTestSite method - ERROR: ", e);

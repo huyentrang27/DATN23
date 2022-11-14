@@ -4,7 +4,7 @@ import com.utility.Utility;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends Utility {
+public class HomePage extends BasePage {
     /**
      * Elements
      */

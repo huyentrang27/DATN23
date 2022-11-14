@@ -11,7 +11,7 @@ public class DataFaker {
             return parts[0] + "+" + generatetimeStampString("HHmmssSSS")+ "@" + parts[1];
         }
         else {
-            throw new IllegalArgumentException("The string email does't contain @");
+            throw new IllegalArgumentException("The string email doesn't contain @");
         }
     }
 

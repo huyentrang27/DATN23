@@ -23,7 +23,7 @@ public class BasePage extends Utility {
     private WebElement ticketPriceTab;
     @FindBy (xpath = "//a[@href='/Page/BookTicketPage.cshtml']")
     private WebElement bookTicketTab;
-    @FindBy (xpath = "//a[@href='/Account/Register.cshtml'")
+    @FindBy (xpath = "//a[@href='/Account/Register.cshtml']")
     private WebElement registerTab;
     @FindBy (xpath = "//a[@href='/Account/Login.cshtml']")
     private WebElement loginPageTab;

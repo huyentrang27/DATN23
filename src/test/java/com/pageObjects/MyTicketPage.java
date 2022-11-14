@@ -2,12 +2,11 @@ package com.pageObjects;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.utility.TestReporter;
-import com.utility.Utility;
 import com.utility.WebDriverUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MyTicketPage extends Utility {
+public class MyTicketPage extends BasePage {
     /**
      * Elements
      */

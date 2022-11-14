@@ -7,7 +7,7 @@ import com.utility.WebDriverUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegisterPage extends Utility {
+public class RegisterPage extends BasePage {
     /**
      * Locators
      */
@@ -76,7 +76,7 @@ public class RegisterPage extends Utility {
 
     public void register (ExtentTest logStep, String email, String password, String confirmPass, String PID) {
         try{
-            log4j.info("register - Starts");
+            log4j.info("Register method - Starts");
             TestReporter.logInfo(logStep, "Register an account appears ...");
 
             inputEmail(email);
@@ -85,11 +85,11 @@ public class RegisterPage extends Utility {
             inputPID(PID);
             clickRegisterButton();
 
-            log4j.info("register method - Ends");
+            log4j.info("Register method - Ends");
         }catch (Exception e)
         {
-            log4j.error("register method - ERROR: ", e);
-            TestReporter.logException(logStep, "register - ERROR", e);
+            log4j.error("Register method - ERROR: ", e);
+            TestReporter.logException(logStep, "Register method - ERROR", e);
         }
     }
 }
