@@ -24,7 +24,7 @@ public class TC01_Implement_Register_function extends TestBase {
 
         logStep = TestReporter.logStepInfo(logMethod, "Step #2: Go to Register page");
         HomePage homePage = PageFactory.initElements(Utility.getDriver(), HomePage.class);
-        homePage.moveToRegisterTab();
+        homePage.clickOnRegisterTab();
 
         logStep = TestReporter.logStepInfo(logMethod, "Step #3: Register new account");
         RegisterPage registerPage = PageFactory.initElements(Utility.getDriver(), RegisterPage.class);
@@ -34,7 +34,7 @@ public class TC01_Implement_Register_function extends TestBase {
         Assertion.verifyActualAndExpected(logStep, data.get("Message"), registerPage.getRegisterSuccessfullyMessage());
 
         logStep = TestReporter.logStepInfo(logMethod, "Step #5: Login with registered account");
-        registerPage.moveToLoginPage();
+        registerPage.clickOnLoginTab();
         LoginPage loginPage = PageFactory.initElements(Utility.getDriver(), LoginPage.class);
         loginPage.login(logStep, emailAddress, password);
 

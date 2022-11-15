@@ -1,0 +1,178 @@
+{
+  "TC_RES_02_Able_to_register_an_account_with_valid_info": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Able to register an account with valid info",
+      "Email": "tnguyen@gmail.com",
+      "Password": "123456789",
+      "PID": "12345678",
+      "Message": "You're here"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Able to register an account with valid info",
+      "Email": "tnguyen@gmail.com",
+      "Password": "sjgfuwetrjwejnjidshuydsfkdsfksdhfi7fweuihwl",
+      "PID": "12345678",
+      "Message": "You're here"
+    },
+    {
+      "Data": "Data3",
+      "TestPurpose": "Able to register an account with valid info",
+      "Email": "tnguyen@gmail.com",
+      "Password": "123456789",
+      "PID": "123456789012345",
+      "Message": "You're here"
+    },
+    {
+      "Data": "Data4",
+      "TestPurpose": "Able to register an account with valid info",
+      "Email": "tnguyen@gmail.com",
+      "Password": "123456789",
+      "PID": "12345678901234567890",
+      "Message": "You're here"
+    }
+  ],
+  "TC_RES_03_Unable_to_register_by_leaving_Email_filed_empty": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register by leaving Email filed empty",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "EmailErrMessage": "Invalid email length"
+    }
+  ],
+  "TC_RES_06_Unable_to_register_new_account_by_using_a_registered_account_before": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register new account by using a registered account before",
+      "RegisterErrMessage": "This email address is already in use."
+    }
+  ],
+  "TC_RES_07_Unable_to_register_new_account_by_using_invalid_email_format": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register new account by using invalid email format",
+      "Email": "@gmail.com",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "EmailErrMessage": "Invalid email address"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Unable to register new account by using invalid email format",
+      "Email": "trnguyen@",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "EmailErrMessage": "Invalid email address"
+    },
+    {
+      "Data": "Data3",
+      "TestPurpose": "Unable to register new account by using invalid email format",
+      "Email": "1231123^^@",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "EmailErrMessage": "Invalid email address"
+    }
+  ],
+  "TC_RES_08_Unable_to_register_account_with_password_length_less_than_6_or_more_than_32": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register account with email length les than 6 or more than 32",
+      "Email": "trnguyen123456789123456@gmail.com",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "EmailErrMessage": "Invalid email length"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Unable to register account with email length les than 6 or more than 32",
+      "Email": "trnguyen123456789123456423456789trangnguyen1234567891234@gmail.com",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "EmailErrMessage": "Invalid email length"
+    }
+  ],
+  "TC_RES_010_Unable_to_register_by_leaving_Password_filed_empty": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register by leaving Password filed empty",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "PasswordErrMessage": "Invalid password length"
+    }
+  ],
+  "TC_RES_011_Unable_to_register_account_with_password_length_less_than_8_or_more_than_64": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register account with password length les than 8 or more than 64",
+      "Password": "1234567",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "PasswordErrMessage": "Invalid password length"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Unable to register account with password length les than 8 or more than 64",
+      "Password": "12345678123456781234567812345678123456781234567812345678123456789",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "PasswordErrMessage": "Invalid password length"
+    }
+  ],
+  "TC_RES_013_Unable_to_register_new_account_when_password_and_confirm_password_field_are_not_match": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register new account when password and confirm password field are not match",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "ConfirmPasswordErrMessage": "The two passwords do not match"
+    }
+  ],
+  "TC_RES_015_Unable_to_register_by_leaving_PID_Passport_number_filed_empty": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register by leaving PID/Passport number filed empty",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "PIDErrMessage": "Invalid ID length"
+    }
+  ],
+  "TC_RES_016_Unable_to_register_account_with_PID_length_less_than_8_or_more_than_20": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register account with PID length les than 8 or more than 20",
+      "PID": "1234567",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "PIDErrMessage": "Invalid ID length"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Unable to register account with PID length les than 8 or more than 20",
+      "PID": "123456781234567812345",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "PIDErrMessage": "Invalid ID length"
+    }
+  ],
+  "TC_RES_016_Unable_to_register_account_with_PID_length_less_than_8_or_more_than_20": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register account with PID length les than 8 or more than 20",
+      "PID": "1234567",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "PIDErrMessage": "Invalid ID length"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Unable to register account with PID length les than 8 or more than 20",
+      "PID": "123456781234567812345",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "PIDErrMessage": "Invalid ID length"
+    }
+  ],
+  "TC_RES_018_Unable_to_rgister_new_account_by_using_PID_contain_special_character": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to register account with PID length les than 8 or more than 20",
+      "PID": "1234567@@##",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "PIDErrMessage": "Invalid ID length"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Unable to register account with PID length les than 8 or more than 20",
+      "PID": "1234567...;;;",
+      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+      "PIDErrMessage": "Invalid ID length"
+    }
+  ]
+}

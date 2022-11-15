@@ -11,6 +11,8 @@ public class LoginPage extends BasePage {
     /**
      * Elements
      */
+    @FindBy(xpath = "//div[@id='content']//h1")
+    private WebElement header;
     @FindBy(xpath = "//input[@id='username']")
     private WebElement txt_email;
     @FindBy(xpath = "//input[@id='password']")
@@ -68,5 +70,23 @@ public class LoginPage extends BasePage {
             TestReporter.logException(logStep, "login - ERROR", e);
         }
 
+    }
+    public void verifyLoginPageDisplayProperly (ExtentTest logTest) {
+        try{
+            log4j.info("verifyLoginPageDisplayProperly method - Starts");
+            TestReporter.logInfo(logTest, "Verify Login page ...");
+
+            WebDriverUtils.waitForPageLoaded();
+            Assertion.checkControlExist(logTest, header, "Page header");
+            Assertion.checkControlExist(logTest, txt_email, "Email field");
+            Assertion.checkControlExist(logTest, txt_password, "Password field");
+            Assertion.checkControlExist(logTest, btn_login, "Register button");
+
+            log4j.info("verifyLoginPageDisplayProperly method - Ends");
+        }catch (Exception e)
+        {
+            log4j.error("verifyLoginPageDisplayProperly method - ERROR: ", e);
+            TestReporter.logException(logTest, "Verify Login page - ERROR", e);
+        }
     }
 }
