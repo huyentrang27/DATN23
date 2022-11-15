@@ -37,37 +37,37 @@ public class BasePage extends Utility {
     /**
      * Methods
      */
-    public void moveToTimeTablePage () {
+    public void clickOnToTimeTableTab () {
         WebDriverUtils.waitForControlBeClickable(trainTimeTableTab);
         trainTimeTableTab.click();
     }
 
-    public void moveToLoginPage () {
+    public void clickOnLoginTab () {
         WebDriverUtils.waitForControlBeClickable(loginPageTab);
         loginPageTab.click();
     }
 
-    public void moveToBookTicketPage () {
+    public void clickOnBookTicketTab () {
         WebDriverUtils.waitForControlBeClickable(bookTicketTab);
         bookTicketTab.click();
     }
 
-    public void moveToContactTab () {
+    public void clickOnContactTab () {
         WebDriverUtils.waitForControlBeClickable(contactTab);
         contactTab.click();
     }
 
-    public void moveToRegisterTab () {
+    public void clickOnRegisterTab () {
         WebDriverUtils.waitForControlBeClickable(registerTab);
         registerTab.click();
     }
 
-    public void moveToChangePasswordTab () {
+    public void clickOnChangePasswordTab () {
         WebDriverUtils.waitForControlBeClickable(changePasswordTab);
         changePasswordTab.click();
     }
 
-    public void moveToMyTicketTab () {
+    public void clickOnMyTicketTab () {
         WebDriverUtils.waitForControlBeClickable(myTicketTab);
         myTicketTab.click();
     }
