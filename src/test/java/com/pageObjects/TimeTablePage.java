@@ -11,7 +11,7 @@ public class TimeTablePage extends BasePage {
      * Elements
      */
     @FindBy(xpath = "//tr/td[count(//th[text()='Depart Station']/preceding-sibling::th) + 1][text()='Sài Gòn']\" +\n" +
-            "            \"/..//td[count(//th[text()='Arrive Station']/preceding-sibling::th) + 1][text()='Phan Thiết']\" +\n" +
+            "            \"/..//td[count(//th[text()='&s']/preceding-sibling::th) + 1][text()='%s']\" +\n" +
             "            \"/../td[count(//th[text()='Check Price']/preceding-sibling::th) + 1]/descendant::a")
     private WebElement link_checkPrice;
 
