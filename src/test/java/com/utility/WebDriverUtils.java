@@ -122,6 +122,14 @@ public class WebDriverUtils extends Utility{
         }
     }
 
+    public static void  scrollTillTheEnd(){
+        try {
+            JavascriptExecutor js = (JavascriptExecutor) Utility.getDriver();
+            js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        } catch (Exception e){
+        }
+    }
+
     public static boolean doesControlExist(WebElement element){
         try {
             return element.isDisplayed();

@@ -87,6 +87,7 @@ public class RegisterPage extends BasePage {
     public String getPasswordErrorMessage () {
         return txt_PasswordErrorMessage.getText();
     }
+
     public String getConfirmPasswordErrorMessage () {
         return txt_ConfirmPasswordErrorMessage.getText();
     }
