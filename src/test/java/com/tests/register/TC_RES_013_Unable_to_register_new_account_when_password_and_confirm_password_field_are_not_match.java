@@ -15,8 +15,8 @@ public class TC_RES_013_Unable_to_register_new_account_when_password_and_confirm
 
     @Test(dataProvider = "getDataForTest", description = "Unable to register new account when password and confirm password field are not match")
     public void TC_RES_013(Hashtable<String, String> data) {
-        String password = DataFaker.generatetimeStampString("yymmddssmmhh");
-        String confirmPassword = DataFaker.generatetimeStampString("hhmmssddmmyy");
+        String password = DataFaker.generateTimeStampString("yymmddssmmhh");
+        String confirmPassword = DataFaker.generateTimeStampString("hhmmssddmmyy");
 
         logStep = TestReporter.logStepInfo(logMethod, "Step #1: Navigate to Railway");
         WebDriverUtils.navigateToTestSite(logStep, RAILWAY_URL);

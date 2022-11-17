@@ -1,0 +1,69 @@
+{
+  "TC_BK_01_Check_UI_of_Book_Ticket_page": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Check UI of book Ticket page",
+      "SeatTypes": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner"
+    }
+  ],
+  "TC_BK_05_User_is_able_to_book_ticket_by_selecting_valid_info": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Verify that user can book ticket successfully",
+      "DepartStation": "Sài Gòn",
+      "ArriveStation": "Phan Thiết",
+      "SeatType": "Hard seat",
+      "TicketAmount": "4"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Verify that user can book ticket successfully",
+      "DepartStation": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft seat with air conditioner",
+      "TicketAmount": "8"
+    }
+  ],
+  "TC_BK_06_07_User_can_book_up_to_10_tickets": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Verify that user can book up to 10 tickets",
+      "DepartStation": "Sài Gòn",
+      "ArriveStation": "Phan Thiết",
+      "SeatType": "Hard seat",
+      "TicketAmount1": "4",
+      "TicketAmount2": "6"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Verify that user can book up to 10 tickets",
+      "DepartStation": "Sài Gòn",
+      "ArriveStation": "Phan Thiết",
+      "SeatType": "Hard seat",
+      "TicketAmount1": "3",
+      "TicketAmount2": "8",
+      "BookTicketErrorMessage": "There're errors in the form. Please correct the errors and try again.",
+      "AmountErrorMessage": "You have booked %s ticket(s). You can only book %s more."
+    },
+    {
+      "Data": "Data3",
+      "TestPurpose": "Verify that user can book up to 10 tickets",
+      "DepartStation": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft seat with air conditioner",
+      "TicketAmount1": "7",
+      "TicketAmount2": "3"
+    },
+    {
+      "Data": "Data4",
+      "TestPurpose": "Verify that user can book up to 10 tickets",
+      "DepartStation": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft seat with air conditioner",
+      "TicketAmount1": "2",
+      "TicketAmount2": "9",
+      "BookTicketErrorMessage": "There're errors in the form. Please correct the errors and try again.",
+      "AmountErrorMessage": "You have booked %s ticket(s). You can only book %s more."
+    }
+  ]
+}

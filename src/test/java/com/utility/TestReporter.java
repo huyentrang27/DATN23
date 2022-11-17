@@ -62,7 +62,7 @@ public class TestReporter {
 
     public static void captureScreenshot(ExtentTest logTest, String detail, String screenShotName) {
         try {
-            screenShotName = screenShotName + DataFaker.generatetimeStampString("yyyy-MM-dd-HH-mm-ss") + ".png";
+            screenShotName = screenShotName + DataFaker.generateTimeStampString("yyyy-MM-dd-HH-mm-ss") + ".png";
 
             TakesScreenshot ts = (TakesScreenshot) Utility.getDriver();
             File source = ts.getScreenshotAs(OutputType.FILE);
