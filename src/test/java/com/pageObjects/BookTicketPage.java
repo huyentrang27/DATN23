@@ -1,13 +1,17 @@
 package com.pageObjects;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.common.CommonMethods;
 import com.utility.Assertion;
 import com.utility.TestReporter;
 import com.utility.Utility;
 import com.utility.WebDriverUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class BookTicketPage extends BasePage {
     /**
@@ -16,66 +20,80 @@ public class BookTicketPage extends BasePage {
     @FindBy(xpath = "//div[@id='content']//h1")
     private WebElement bookTicketPageHeader;
     @FindBy(xpath = "//select[@name='Date']")
-    private WebElement departDateField;
+    private WebElement cbx_departDateField;
+    @FindBy(xpath = "//select[@name='Date']/option[1]")
+    private WebElement departDateFirstOption;
+    @FindBy(xpath = "//select[@name='Date']/option[last()]")
+    private WebElement departDateLastOption;
     @FindBy(xpath = "//select[@name='DepartStation']")
-    private WebElement departFromField;
+    private WebElement cbx_departFromField;
     @FindBy(xpath = "//select[@name='ArriveStation']")
-    private WebElement arriveAtField;
+    private WebElement cbx_arriveAtField;
     @FindBy(xpath = "//select[@name='SeatType']")
-    private WebElement seatTypeField;
+    private WebElement cbx_seatTypeField;
     @FindBy(xpath = "//select[@name='TicketAmount']")
-    private WebElement ticketAmountField;
+    private WebElement cbx_ticketAmountField;
+    @FindBy(xpath = "//select[@name='TicketAmount']/option[1]")
+    private WebElement ticketAmountFirstOption;
+    @FindBy(xpath = "//select[@name='TicketAmount']/option[last()]")
+    private WebElement ticketAmountLastOption;
     @FindBy(xpath = "//input[@value='Book ticket']")
     private WebElement btn_bookTicket;
-    @FindBy(xpath = "//h1[@align='center'][text()='Ticket Booked Successfully!']")
-    private WebElement txt_bookTicketSuccessfully;
-    @FindBy(xpath = "//tr/td[count(//th[text()='Depart Station']/preceding-sibling::th) + 1]")
-    private WebElement txt_infoDepartStationTicket;
-    @FindBy(xpath = "//tr/td[count(//th[text()='Arrive Station']/preceding-sibling::th) + 1]")
-    private WebElement txt_infoArriveAtTicket;
-    @FindBy(xpath = "//tr/td[count(//th[text()='Seat Type']/preceding-sibling::th) + 1]")
-    private WebElement txt_infoSeatTypeTicket;
-    @FindBy(xpath = "//tr/td[count(//th[text()='Depart Date']/preceding-sibling::th) + 1]")
-    private WebElement txt_infoDepartDateTicket;
-    @FindBy(xpath = "//tr/td[count(//th[text()='Amount']/preceding-sibling::th) + 1]")
-    private WebElement txt_infoAmountTicket;
+    @FindBy(xpath = "//p[@class ='message error']")
+    private WebElement txt_BookTicketErrorMessage;
+    @FindBy(xpath = "//label[@class='validation-error']")
+    private WebElement txt_AmountErrorMessage;
+    /**
+     * Dynamic xpath
+     */
+    String seatTypeOptions = "//select[@name='SeatType']/option[%s]";
 
     /**
      * Methods
      */
     public void selectValueForDepartDateField (String departDate) {
-        Select valueOfDepartDateField = new Select(departDateField);
-        WebDriverUtils.waitForControl(departDateField);
+        Select valueOfDepartDateField = new Select(cbx_departDateField);
+        WebDriverUtils.waitForControl(cbx_departDateField);
         valueOfDepartDateField.selectByVisibleText(departDate);
     }
 
-    public void selectValueForDepartFromField (String departFrom) {
-        Select valueOfDepartFromField = new Select(departFromField);
-        WebDriverUtils.waitForControl(departFromField);
-        valueOfDepartFromField.selectByVisibleText(departFrom);
+    public void selectValueForDepartFromField (String departStation) {
+        Select valueOfDepartFromField = new Select(cbx_departFromField);
+        WebDriverUtils.waitForControl(cbx_departFromField);
+        valueOfDepartFromField.selectByVisibleText(departStation);
     }
 
-    public void selectValueForArriveAtField (String arriveAt) {
-        Select valueOfArriveAtField = new Select(arriveAtField);
-        WebDriverUtils.waitForControl(arriveAtField);
-        valueOfArriveAtField.selectByVisibleText(arriveAt);
+    public void selectValueForArriveAtField (String arriveStation) {
+        Select valueOfArriveAtField = new Select(cbx_arriveAtField);
+        WebDriverUtils.waitForControl(cbx_arriveAtField);
+        valueOfArriveAtField.selectByVisibleText(arriveStation);
     }
 
     public void selectValueForSeatTypeField (String seatType) {
-        Select valueOfSeatTypeField = new Select(seatTypeField);
-        WebDriverUtils.waitForControl(seatTypeField);
+        Select valueOfSeatTypeField = new Select(cbx_seatTypeField);
+        WebDriverUtils.waitForControl(cbx_seatTypeField);
         valueOfSeatTypeField.selectByVisibleText(seatType);
     }
 
-    public void selectValueForTicketAmountField (String ticletAmount) {
-        Select valueOfTicketAmountField = new Select(ticketAmountField);
-        WebDriverUtils.waitForControl(ticketAmountField);
-        valueOfTicketAmountField.selectByVisibleText(ticletAmount);
+    public void selectValueForTicketAmountField (String ticketAmount) {
+        Select valueOfTicketAmountField = new Select(cbx_ticketAmountField);
+        WebDriverUtils.waitForControl(cbx_ticketAmountField);
+        valueOfTicketAmountField.selectByVisibleText(ticketAmount);
     }
 
     public void clickBookTicketButton () {
         WebDriverUtils.waitForControlBeClickable(btn_bookTicket);
         btn_bookTicket.click();
+    }
+
+    public String getBookTicketErrorMessage () {
+        WebDriverUtils.waitForControl(txt_BookTicketErrorMessage);
+        return txt_BookTicketErrorMessage.getText();
+    }
+
+    public String getAmountErrorMessage () {
+        WebDriverUtils.waitForControl(txt_AmountErrorMessage);
+        return txt_AmountErrorMessage.getText();
     }
 
     public void clickBookTicketButton(ExtentTest logStep){
@@ -92,26 +110,18 @@ public class BookTicketPage extends BasePage {
         }
     }
 
-    public String getBookTicketSuccessfullyText () {
-        return txt_bookTicketSuccessfully.getText();
-    }
-
-    public String[] getInfoTicket () {
-        String departStation = txt_infoDepartStationTicket.getText();
-        String arriveAt = txt_infoArriveAtTicket.getText();
-        String seatType = txt_infoSeatTypeTicket.getText();
-        String departDate = txt_infoDepartDateTicket.getText();
-        String amount = txt_infoAmountTicket.getText();
-        String[] infoTicket = {departStation, arriveAt, seatType, departDate, amount};
-        return infoTicket;
-    }
-
     public void checkBookTicketPageDisplayed(ExtentTest logStep) {
         try {
             log4j.info("checkBookTicketPageDisplayed method - Starts");
             TestReporter.logInfo(logStep, "checkBookTicketPageDisplayed ...");
 
             Assertion.checkControlExist(logStep, bookTicketPageHeader, "Book Ticket page header");
+            Assertion.checkControlExist(logStep, cbx_departDateField, "Depart date filed");
+            Assertion.checkControlExist(logStep, cbx_departFromField, "Depart station field");
+            Assertion.checkControlExist(logStep, cbx_arriveAtField, "Arrive station field");
+            Assertion.checkControlExist(logStep, cbx_seatTypeField, "Seat type field");
+            Assertion.checkControlExist(logStep, cbx_ticketAmountField, "Ticket amount filed");
+            Assertion.checkControlExist(logStep, btn_bookTicket, "Book Ticket button");
 
             log4j.info("checkBookTicketPageDisplayed method - Ends");
         } catch (Exception e) {
@@ -120,14 +130,67 @@ public class BookTicketPage extends BasePage {
         }
     }
 
-    public void bookTicket (ExtentTest logStep, String departDate, String departFrom, String arriveAt, String seatType, String amount) {
+    public void verifyDepartDateDisplay3To30daysAhead(ExtentTest logStep) {
+        try {
+            log4j.info("verifyDepartDateDisplay3To30daysAhead method - Starts");
+            TestReporter.logInfo(logStep, "verifyDepartDateDisplay3To30daysAhead ...");
+
+            String firstDate = departDateFirstOption.getText();
+            String lastDate = departDateLastOption.getText();
+
+            Assertion.verifyActualAndExpected(logStep, firstDate, CommonMethods.get3DaysAfter());
+            Assertion.verifyActualAndExpected(logStep, lastDate, CommonMethods.get30DaysAfter());
+
+            log4j.info("verifyDepartDateDisplay3To30daysAhead method - Ends");
+        } catch (Exception e) {
+            log4j.error("verifyDepartDateDisplay3To30daysAhead method - ERROR: ", e);
+            TestReporter.logException(logStep, "verifyDepartDateDisplay3To30daysAhead - ERROR", e);
+        }
+    }
+
+    public void verifyAllSeatTypesDisplay(ExtentTest logStep, List<String> seatTypeList) {
+        try {
+            log4j.info("verifyAllSeatTypesDisplay method - Starts");
+            TestReporter.logInfo(logStep, "verifyAllSeatTypesDisplay ...");
+
+            for (int i=0; i<seatTypeList.size(); i++)
+            {
+                Assertion.verifyActualAndExpected(logStep, Utility.getDriver().findElement(By.xpath(String.format(seatTypeOptions, i+1))).getText(), seatTypeList.get(i));
+            }
+
+            log4j.info("verifyAllSeatTypesDisplay method - Ends");
+        } catch (Exception e) {
+            log4j.error("verifyAllSeatTypesDisplay method - ERROR: ", e);
+            TestReporter.logException(logStep, "verifyAllSeatTypesDisplay - ERROR", e);
+        }
+    }
+
+    public void verifyTicketAmountDisplay1To10(ExtentTest logStep) {
+        try {
+            log4j.info("verifyTicketAmountDisplay1To10 method - Starts");
+            TestReporter.logInfo(logStep, "verifyTicketAmountDisplay1To10 ...");
+
+            String firstTicketAmountOption = ticketAmountFirstOption.getText();
+            String lastTicketAmountOption = ticketAmountLastOption.getText();
+
+            Assertion.verifyActualAndExpected(logStep, firstTicketAmountOption, "1");
+            Assertion.verifyActualAndExpected(logStep, lastTicketAmountOption,"10");
+
+            log4j.info("verifyTicketAmountDisplay1To10 method - Ends");
+        } catch (Exception e) {
+            log4j.error("verifyTicketAmountDisplay1To10 method - ERROR: ", e);
+            TestReporter.logException(logStep, "verifyTicketAmountDisplay1To10 - ERROR", e);
+        }
+    }
+
+    public void bookTicket (ExtentTest logStep, String departDate, String departStation, String arriveStation, String seatType, String amount) {
         try {
             log4j.info("bookTicket method - Starts");
             TestReporter.logInfo(logStep, "bookTicket ...");
 
             selectValueForDepartDateField(departDate);
-            selectValueForDepartFromField(departFrom);
-            selectValueForArriveAtField(arriveAt);
+            selectValueForDepartFromField(departStation);
+            selectValueForArriveAtField(arriveStation);
             selectValueForSeatTypeField(seatType);
             selectValueForTicketAmountField(amount);
             clickBookTicketButton();

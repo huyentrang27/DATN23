@@ -30,5 +30,14 @@
       "Password2": "987654321",
       "LoginErrMessage": "Invalid username or password. Please try again."
     }
+  ],
+  "TC_LOGIN_08_Verify_that_password_is_case_sensitive": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Password is case sensitive",
+      "Password1": "TRANGNGUYEN",
+      "Password2": "trangnguyen",
+      "LoginErrMessage": "Invalid username or password. Please try again."
+    }
   ]
 }

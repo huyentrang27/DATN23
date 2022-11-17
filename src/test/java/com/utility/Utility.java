@@ -30,7 +30,7 @@ public class Utility {
     public static Log log4j;
 
     //initiate variable for generating time stamp
-    public static String timeStampString = DataFaker.generatetimeStampString("yyyy-MM-dd-HH-mm-ss");
+    public static String timeStampString = DataFaker.generateTimeStampString("yyyy-MM-dd-HH-mm-ss");
 
     //Initiate local variable for file path
     public static String reportLocation = OUTPUT_PATH + "report-" + timeStampString + "/";
