@@ -122,10 +122,10 @@ public class WebDriverUtils extends Utility{
         }
     }
 
-    public static void  scrollTillTheEnd(){
+    public static void  scrollTillElementVisible(WebElement element){
         try {
-            JavascriptExecutor js = (JavascriptExecutor) Utility.getDriver();
-            js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+            JavascriptExecutor jse = (JavascriptExecutor) Utility.getDriver();
+            jse.executeScript("arguments[0].scrollIntoView()", element);
         } catch (Exception e){
         }
     }

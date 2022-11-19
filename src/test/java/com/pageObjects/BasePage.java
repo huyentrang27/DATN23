@@ -37,7 +37,7 @@ public class BasePage extends Utility {
     /**
      * Methods
      */
-    public void clickOnToTimeTableTab () {
+    public void clickOnTimeTableTab () {
         WebDriverUtils.waitForControlBeClickable(trainTimeTableTab);
         trainTimeTableTab.click();
     }

@@ -1,0 +1,53 @@
+{
+  "TC_CP_03_User_is_able_to_change_password_by_providing_valid_information": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "User is able to change password by providing valid information",
+      "Password": "123456789",
+      "NewPassword": "tranglinct",
+      "SuccessMessage": "Your password has been updated!"
+    }
+  ],
+  "TC_CP_04_05_User_is_unable_to_Change_Password_by_leaving_Current_password_field_empty_TC_CP_04": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "User is unable to Change Password by leaving current password field empty",
+      "Password": "123456789",
+      "CurrentPassword": "",
+      "NewPassword": "tranglinct",
+      "ErrorMessage": "Password change failed. Please correct the errors and try again.",
+      "CurrentPassErrorMessage": "Invalid current password."
+    }
+  ],
+  "TC_CP_04_05_User_is_unable_to_Change_Password_by_leaving_Current_password_field_empty_TC_CP_05": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "User is able to change password by providing wrong password",
+      "Password": "123456789",
+      "WrongPassword": "987654321",
+      "NewPassword": "tranglinct",
+      "ErrorMessage": "An error occurred when attempting to change the password. Maybe your current password is incorrect.",
+      "CurrentPassErrorMessage": "Invalid current password."
+    }
+  ],
+  "TC_CP_06_08_Unable_to_change_password_by_leaving_New_password_or_Confirm_password_field_empty": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "User is unable to Change Password by leaving new password or confirm password field empty",
+      "Password": "123456789",
+      "ErrorMessage": "Password change failed. Please correct the errors and try again.",
+      "NewPasswordErrorMessage": "Invalid new password."
+    }
+  ],
+  "TC_CP_09_Unable_to_change_password_when_new_password_and_confirm_password_field_are_not_match": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Unable to change password when new password and confirm password field are not match",
+      "Password": "123456789",
+      "NewPassword": "tranglinct",
+      "ConfirmPassword": "huyentrang27",
+      "ErrorMessage": "Password change failed. Please correct the errors and try again.",
+      "ConfirmPasswordErrorMessage": "The password confirmation does not match the new password."
+    }
+  ]
+}

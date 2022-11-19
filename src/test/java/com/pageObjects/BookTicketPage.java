@@ -27,10 +27,16 @@ public class BookTicketPage extends BasePage {
     private WebElement departDateLastOption;
     @FindBy(xpath = "//select[@name='DepartStation']")
     private WebElement cbx_departFromField;
+    @FindBy(xpath = "//select[@name='DepartStation']/option[@selected='selected']")
+    private WebElement option_SelectedDepartStation;
     @FindBy(xpath = "//select[@name='ArriveStation']")
     private WebElement cbx_arriveAtField;
+    @FindBy(xpath = "//select[@name='ArriveStation']/option[@selected='selected']")
+    private WebElement option_SelectedArriveStation;
     @FindBy(xpath = "//select[@name='SeatType']")
     private WebElement cbx_seatTypeField;
+    @FindBy(xpath = "//select[@name='SeatType']/option[1]")
+    private WebElement option_SelectedSeatType;
     @FindBy(xpath = "//select[@name='TicketAmount']")
     private WebElement cbx_ticketAmountField;
     @FindBy(xpath = "//select[@name='TicketAmount']/option[1]")
@@ -82,6 +88,7 @@ public class BookTicketPage extends BasePage {
     }
 
     public void clickBookTicketButton () {
+        WebDriverUtils.scrollTillElementVisible(btn_bookTicket);
         WebDriverUtils.waitForControlBeClickable(btn_bookTicket);
         btn_bookTicket.click();
     }
@@ -94,6 +101,31 @@ public class BookTicketPage extends BasePage {
     public String getAmountErrorMessage () {
         WebDriverUtils.waitForControl(txt_AmountErrorMessage);
         return txt_AmountErrorMessage.getText();
+    }
+
+    public String getSelectedDepartDate () {
+        WebDriverUtils.waitForControl(departDateFirstOption);
+        return departDateFirstOption.getText();
+    }
+
+    public String getSelectedDepartStation () {
+        WebDriverUtils.waitForControl(option_SelectedDepartStation);
+        return option_SelectedDepartStation.getText();
+    }
+
+    public String getSelectedArriveStation () {
+        WebDriverUtils.waitForControl(option_SelectedArriveStation);
+        return option_SelectedArriveStation.getText();
+    }
+
+    public String getSelectedSeatType () {
+        WebDriverUtils.waitForControl(option_SelectedSeatType);
+        return option_SelectedSeatType.getText();
+    }
+
+    public String getSelectedTicketAmount () {
+        WebDriverUtils.waitForControl(ticketAmountFirstOption);
+        return ticketAmountFirstOption.getText();
     }
 
     public void clickBookTicketButton(ExtentTest logStep){
