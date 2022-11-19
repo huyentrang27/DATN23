@@ -7,8 +7,8 @@ public class TicketPricePage extends BasePage{
     /**
      * Elements
      */
-    @FindBy(xpath = "//table[@class='MyTable MedTable']//th[text()='Ticket price from Sài Gòn to Phan Thiết']")
-    private WebElement header_ticketPricePage;
+    @FindBy(xpath = "//table//tr[@class = 'TableSmallHeader']/th")
+    private WebElement header_ticketInformation;
     @FindBy(xpath = "//table[@class='MyTable MedTable']//td[count(//td[text()='HS']/preceding-sibling::td) + 1][text()='90000']")
     private WebElement hardSeat;
     @FindBy(xpath = "//table[@class='MyTable MedTable']//td[count(//td[text()='SS']/preceding-sibling::td) + 1][text()='115000']")
@@ -25,8 +25,8 @@ public class TicketPricePage extends BasePage{
     /**
      * Methods
      */
-    public String getTextTitleOfTicketPrice () {
-        return header_ticketPricePage.getText();
+    public String getTicketInformationHeader () {
+        return header_ticketInformation.getText();
     }
 
     public String[] getTicketPrice () {

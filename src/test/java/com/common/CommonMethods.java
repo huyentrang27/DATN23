@@ -59,6 +59,29 @@ public class CommonMethods {
         }
     }
 
+    public static void login(ExtentTest logStep, String emailAddress, String password, String PID){
+        try{
+            log4j.info("login - Starts");
+            TestReporter.logInfo(logStep, "login ...");
+
+            HomePage homePage = PageFactory.initElements(Utility.getDriver(), HomePage.class);
+            homePage.clickOnRegisterTab();
+
+            RegisterPage registerPage = PageFactory.initElements(Utility.getDriver(), RegisterPage.class);
+            registerPage.register(logStep, emailAddress, password, PID);
+            registerPage.clickOnLoginTab();
+
+            LoginPage loginPage = PageFactory.initElements(Utility.getDriver(), LoginPage.class);
+            loginPage.login(logStep, emailAddress, password);
+
+            log4j.info("login method - Ends");
+        }catch (Exception e)
+        {
+            log4j.error("login method - ERROR: ", e);
+            TestReporter.logException(logStep, "login - ERROR", e);
+        }
+    }
+
     public static String get3DaysAfter(){
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 

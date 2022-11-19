@@ -44,8 +44,8 @@ public class LoginPage extends BasePage {
     }
 
     public void clickLoginButton() {
+        WebDriverUtils.scrollTillElementVisible(btn_Login);
         WebDriverUtils.waitForControlBeClickable(btn_Login);
-        WebDriverUtils.scrollTillTheEnd();
         btn_Login.click();
     }
 
@@ -69,22 +69,8 @@ public class LoginPage extends BasePage {
 
     public String getPasswordErrorMessage () {
         WebDriverUtils.doesControlExist(txt_PasswordErrorMessage);
-        WebDriverUtils.scrollTillTheEnd();
+        WebDriverUtils.scrollTillElementVisible(txt_PasswordErrorMessage);
         return txt_PasswordErrorMessage.getText();
-    }
-
-    public void verifyErrorMessageAppears (ExtentTest logStep) {
-        try{
-            log4j.info("verifyErrorMessageAppears - Starts");
-            TestReporter.logInfo(logStep, "Verify Error Message appears ...");
-
-            Assertion.verifyActualAndExpected(logStep, true, WebDriverUtils.doesControlExist(txt_LoginErrorMessage));
-            log4j.info("verifyErrorMessageAppears method - Ends");
-        }catch (Exception e)
-        {
-            log4j.error("verifyErrorMessageAppears method - ERROR: ", e);
-            TestReporter.logException(logStep, "verifyErrorMessageAppears - ERROR", e);
-        }
     }
 
     public void login (ExtentTest logStep, String email, String password) {

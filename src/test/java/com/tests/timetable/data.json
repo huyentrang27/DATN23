@@ -1,0 +1,33 @@
+{
+  "TC_TIME_03_Verify_Check_price_link_work_correctly": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Verify Check price links work correctly",
+      "DepartStation": "Sài Gòn",
+      "ArriveStation": "Phan Thiết",
+      "ExpectedInfoHeader": "Ticket price from %s to %s"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Verify Check price link works correctly",
+      "DepartStation": "Quảng Ngãi",
+      "ArriveStation": "Đà Nẵng",
+      "ExpectedInfoHeader": "Ticket price from %s to %s"
+    }
+  ],
+  "TC_TIME_04_Verify_that_book_ticket_link_work_correctly": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Verify book ticket link works correctly",
+      "DepartStation": "Nha Trang",
+      "ArriveStation": "Huế",
+      "ExpectedInfoHeader": "Ticket price from %s to %s"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Verify book ticket link works correctly",
+      "DepartStation": "Đà Nẵng",
+      "ArriveStation": "Nha Trang"
+    }
+  ]
+}

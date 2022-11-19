@@ -11,38 +11,74 @@ public class ChangePasswordPage extends BasePage {
     /**
      * Elements
      */
+    @FindBy(xpath = "//div[@id='content']//h1")
+    private WebElement header;
     @FindBy(xpath = "//input[@id='currentPassword']")
-    private WebElement txt_currentPassword;
+    private WebElement txt_CurrentPassword;
     @FindBy(xpath = "//input[@id='newPassword']")
-    private WebElement txt_newPassword;
+    private WebElement txt_NewPassword;
     @FindBy(xpath = "//input[@id='confirmPassword']")
-    private WebElement txt_confirmPassword;
+    private WebElement txt_ConfirmPassword;
     @FindBy(xpath = "//input[@value='Change Password']")
-    private WebElement btn_changePassword;
+    private WebElement btn_ChangePassword;
     @FindBy(xpath = "//p[@class='message error']")
     private WebElement txt_messageError;
+    @FindBy(xpath = "//p[@class='message success']")
+    private WebElement txt_successMessage;
+    @FindBy(xpath = "//label[@for='currentPassword'][@class='validation-error']")
+    private WebElement txt_CurrentPassErrorMessage;
+    @FindBy(xpath = "//label[@for='newPassword'][@class='validation-error']")
+    private WebElement txt_newPassErrorMessage;
+    @FindBy(xpath = "//label[@for='confirmPassword'][@class='validation-error']")
+    private WebElement txt_confirmPassErrorMessage;
 
     /**
      * Methods
      */
     public void typeCurrentPasswordField (String currentPassword) {
-        WebDriverUtils.waitForControlBeClickable(txt_currentPassword);
-        txt_currentPassword.sendKeys(currentPassword);
+        WebDriverUtils.waitForControlBeClickable(txt_CurrentPassword);
+        txt_CurrentPassword.sendKeys(currentPassword);
     }
 
     public void typeNewPasswordField (String newPassword) {
-        WebDriverUtils.waitForControlBeClickable(txt_newPassword);
-        txt_newPassword.sendKeys(newPassword);
+        WebDriverUtils.waitForControlBeClickable(txt_NewPassword);
+        txt_NewPassword.sendKeys(newPassword);
     }
 
     public void typeConfirmPasswordField (String confirmPassword) {
-        WebDriverUtils.waitForControlBeClickable(txt_confirmPassword);
-        txt_confirmPassword.sendKeys(confirmPassword);
+        WebDriverUtils.waitForControlBeClickable(txt_ConfirmPassword);
+        txt_ConfirmPassword.sendKeys(confirmPassword);
     }
 
     public void clickChangePasswordButton () {
-        WebDriverUtils.waitForControlBeClickable(btn_changePassword);
-        btn_changePassword.click();
+        WebDriverUtils.scrollTillElementVisible(btn_ChangePassword);
+        WebDriverUtils.waitForControlBeClickable(btn_ChangePassword);
+        btn_ChangePassword.click();
+    }
+
+    public String getChangePasswordSuccessMessage () {
+        WebDriverUtils.waitForControlBeClickable(txt_successMessage);
+        return txt_successMessage.getText();
+    }
+
+    public String getChangePasswordErrorMessage () {
+        WebDriverUtils.waitForControlBeClickable(txt_messageError);
+        return txt_messageError.getText();
+    }
+
+    public String getCurrentPasswordErrorMessage () {
+        WebDriverUtils.waitForControlBeClickable(txt_CurrentPassErrorMessage);
+        return txt_CurrentPassErrorMessage.getText();
+    }
+
+    public String getNewPasswordErrorMessage () {
+        WebDriverUtils.waitForControlBeClickable(txt_newPassErrorMessage);
+        return txt_newPassErrorMessage.getText();
+    }
+
+    public String getConfirmPasswordErrorMessage () {
+        WebDriverUtils.waitForControlBeClickable(txt_confirmPassErrorMessage);
+        return txt_confirmPassErrorMessage.getText();
     }
 
     public void clickChangePasswordButton (ExtentTest logStep) {
@@ -50,7 +86,7 @@ public class ChangePasswordPage extends BasePage {
             log4j.info("clickChangePasswordButton - Starts");
             TestReporter.logInfo(logStep, "Click Change Password button ...");
 
-            clickChangePasswordButton ();
+            clickChangePasswordButton();
             log4j.info("clickChangePasswordButton method - Ends");
         }catch (Exception e)
         {
@@ -78,9 +114,18 @@ public class ChangePasswordPage extends BasePage {
             log4j.info("changePassword - Starts");
             TestReporter.logInfo(logStep, "Change password appears ...");
 
-            typeCurrentPasswordField(currentPass);
-            typeNewPasswordField(newPass);
-            typeConfirmPasswordField(confirmNewPass);
+            if(!currentPass.equals(""))
+            {
+                typeCurrentPasswordField(currentPass);
+            }
+            if (!newPass.equals(""))
+            {
+                typeNewPasswordField(newPass);
+            }
+            if (!confirmNewPass.equals(""))
+            {
+                typeConfirmPasswordField(confirmNewPass);
+            }
             clickChangePasswordButton();
 
             log4j.info("changePassword method - Ends");
@@ -88,6 +133,26 @@ public class ChangePasswordPage extends BasePage {
         {
             log4j.error("changePassword method - ERROR: ", e);
             TestReporter.logException(logStep, "changePassword - ERROR", e);
+        }
+    }
+
+    public void verifyChangePasswordPageDisplayProperly (ExtentTest logTest) {
+        try{
+            log4j.info("verifyLoginPageDisplayProperly method - Starts");
+            TestReporter.logInfo(logTest, "Verify Login page ...");
+
+            WebDriverUtils.waitForPageLoaded();
+            Assertion.checkControlExist(logTest, header, "Page header");
+            Assertion.checkControlExist(logTest, txt_NewPassword, "New password field");
+            Assertion.checkControlExist(logTest, txt_CurrentPassword, "Current password field");
+            Assertion.checkControlExist(logTest, txt_ConfirmPassword, "Confirm password field");
+            Assertion.checkControlExist(logTest, btn_ChangePassword, "Change password button");
+
+            log4j.info("verifyLoginPageDisplayProperly method - Ends");
+        }catch (Exception e)
+        {
+            log4j.error("verifyLoginPageDisplayProperly method - ERROR: ", e);
+            TestReporter.logException(logTest, "Verify Login page - ERROR", e);
         }
     }
 }
