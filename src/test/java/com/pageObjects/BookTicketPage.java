@@ -36,6 +36,8 @@ public class BookTicketPage extends BasePage {
     @FindBy(xpath = "//select[@name='SeatType']")
     private WebElement cbx_seatTypeField;
     @FindBy(xpath = "//select[@name='SeatType']/option[1]")
+    private WebElement option_FirstSeatType;
+    @FindBy(xpath = "//select[@name='SeatType']/option[@selected='selected']")
     private WebElement option_SelectedSeatType;
     @FindBy(xpath = "//select[@name='TicketAmount']")
     private WebElement cbx_ticketAmountField;
@@ -116,6 +118,11 @@ public class BookTicketPage extends BasePage {
     public String getSelectedArriveStation () {
         WebDriverUtils.waitForControl(option_SelectedArriveStation);
         return option_SelectedArriveStation.getText();
+    }
+
+    public String getFirstSeatTypeOption () {
+        WebDriverUtils.waitForControl(option_FirstSeatType);
+        return option_FirstSeatType.getText();
     }
 
     public String getSelectedSeatType () {

@@ -15,7 +15,7 @@ import static com.common.Constant.*;
 
 public class TC_LOGIN_05_Unable_to_login_with_unregister_account extends TestBase {
 
-    @Test(description = "Unable to login with unregistered account ")
+    @Test(dataProvider = "getDataForTest", description = "Unable to login with unregistered account ")
     public void TC_LOGIN_05(Hashtable<String, String> data) {
         String emailAddress = DataFaker.generateRandomEmail(EMAIL_ADDRESS);
 

@@ -20,8 +20,7 @@
       "Data": "Data1",
       "TestPurpose": "Verify book ticket link works correctly",
       "DepartStation": "Nha Trang",
-      "ArriveStation": "Huế",
-      "ExpectedInfoHeader": "Ticket price from %s to %s"
+      "ArriveStation": "Huế"
     },
     {
       "Data": "Data2",

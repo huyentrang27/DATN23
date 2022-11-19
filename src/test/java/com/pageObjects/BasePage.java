@@ -62,6 +62,11 @@ public class BasePage extends Utility {
         registerTab.click();
     }
 
+    public void clickOnTicketPriceTab () {
+        WebDriverUtils.waitForControlBeClickable(ticketPriceTab);
+        ticketPriceTab.click();
+    }
+
     public void clickOnChangePasswordTab () {
         WebDriverUtils.waitForControlBeClickable(changePasswordTab);
         changePasswordTab.click();

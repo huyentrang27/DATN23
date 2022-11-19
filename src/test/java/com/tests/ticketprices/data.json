@@ -1,0 +1,41 @@
+{
+  "TC_TP_01_Check_UI_of_Ticket_price_page": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Check UI of Ticket price page",
+      "DepartStationList": "Sài Gòn-Phan Thiết-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi"
+    }
+  ],
+  "TC_TP_02_Verify_that_Check_price_link_works_correctly": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Verify Check price links work correctly",
+      "DepartStation": "Huế",
+      "ArriveStation": "Đà Nẵng",
+      "ExpectedInfoHeader": "Ticket price from %s to %s"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Verify Check price link works correctly",
+      "DepartStation": "Quảng Ngãi",
+      "ArriveStation": "Nha Trang",
+      "ExpectedInfoHeader": "Ticket price from %s to %s"
+    }
+  ],
+  "TC_TP_04_Able_to_book_ticket_after_clicking_on_Book_ticker_button_at_Ticket_Price_page": [
+    {
+      "Data": "Data1",
+      "TestPurpose": "Verify book ticket button works correctly",
+      "DepartStation": "Nha Trang",
+      "ArriveStation": "Huế",
+      "SeatType": "Soft seat"
+    },
+    {
+      "Data": "Data2",
+      "TestPurpose": "Verify book ticket button works correctly",
+      "DepartStation": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft bed with air conditioner"
+    }
+  ]
+}
