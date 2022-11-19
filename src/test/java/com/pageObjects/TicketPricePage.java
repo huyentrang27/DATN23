@@ -17,18 +17,6 @@ public class TicketPricePage extends BasePage{
      */
     @FindBy(xpath = "//table//tr[@class = 'TableSmallHeader']/th")
     private WebElement header_TicketInformation;
-    @FindBy(xpath = "//table[@class='MyTable MedTable']//td[count(//td[text()='HS']/preceding-sibling::td) + 1][text()='90000']")
-    private WebElement hardSeat;
-    @FindBy(xpath = "//table[@class='MyTable MedTable']//td[count(//td[text()='SS']/preceding-sibling::td) + 1][text()='115000']")
-    private WebElement softSeat;
-    @FindBy(xpath = "//table[@class='MyTable MedTable']//td[count(//td[text()='SSC']/preceding-sibling::td) + 1][text()='140000']")
-    private WebElement softSeatWithAirConditioner;
-    @FindBy(xpath = "//table[@class='MyTable MedTable']//td[count(//td[text()='HB']/preceding-sibling::td) + 1][text()='190000']")
-    private WebElement hardBed;
-    @FindBy(xpath = "//table[@class='MyTable MedTable']//td[count(//td[text()='SB']/preceding-sibling::td) + 1][text()='240000']")
-    private WebElement softBed;
-    @FindBy(xpath = "//table[@class='MyTable MedTable']//td[count(//td[text()='SBC']/preceding-sibling::td) + 1][text()='290000']")
-    private WebElement softBedWithAirConditioner;
 
     String subTrainsHeader = "//table//tr[contains(., 'Trains depart from %s')]";
     String button_CheckPrice = "//li[text() = '%s to %s']/ancestor::tr/descendant::a";
@@ -39,17 +27,6 @@ public class TicketPricePage extends BasePage{
      */
     public String getTicketInformationHeader () {
         return header_TicketInformation.getText();
-    }
-
-    public String[] getTicketPrice () {
-        String txt_hardSeat = hardSeat.getText();
-        String txt_softSeat = softSeat.getText();
-        String txt_softSeatWithAirConditioner = softSeatWithAirConditioner.getText();
-        String txt_hardBed = hardBed.getText();
-        String txt_softBed = softBed.getText();
-        String txt_softBedWithAirConditioner = softBedWithAirConditioner.getText();
-        String[] ticketPrice = {txt_hardSeat, txt_softSeat, txt_softSeatWithAirConditioner, txt_hardBed, txt_softBed, txt_softBedWithAirConditioner};
-        return ticketPrice;
     }
 
     public void verifyTrainTicketPricingListDisplayProperly(ExtentTest logTest, List<String> departStationList)
