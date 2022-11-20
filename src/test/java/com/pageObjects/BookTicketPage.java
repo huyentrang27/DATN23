@@ -27,10 +27,14 @@ public class BookTicketPage extends BasePage {
     private WebElement departDateLastOption;
     @FindBy(xpath = "//select[@name='DepartStation']")
     private WebElement cbx_departFromField;
+    @FindBy(xpath = "//select[@name='DepartStation']/option[1]")
+    private WebElement departStationFirstOption;
     @FindBy(xpath = "//select[@name='DepartStation']/option[@selected='selected']")
     private WebElement option_SelectedDepartStation;
     @FindBy(xpath = "//select[@name='ArriveStation']")
     private WebElement cbx_arriveAtField;
+    @FindBy(xpath = "//select[@name='ArriveStation']/option[1]")
+    private WebElement arriveStationFirstOption;
     @FindBy(xpath = "//select[@name='ArriveStation']/option[@selected='selected']")
     private WebElement option_SelectedArriveStation;
     @FindBy(xpath = "//select[@name='SeatType']")
@@ -115,9 +119,19 @@ public class BookTicketPage extends BasePage {
         return option_SelectedDepartStation.getText();
     }
 
+    public String getFirstDepartStationOption () {
+        WebDriverUtils.waitForControl(departStationFirstOption);
+        return departStationFirstOption.getText();
+    }
+
     public String getSelectedArriveStation () {
         WebDriverUtils.waitForControl(option_SelectedArriveStation);
         return option_SelectedArriveStation.getText();
+    }
+
+    public String getFirstArriveStationOption () {
+        WebDriverUtils.waitForControl(arriveStationFirstOption);
+        return arriveStationFirstOption.getText();
     }
 
     public String getFirstSeatTypeOption () {
@@ -226,10 +240,15 @@ public class BookTicketPage extends BasePage {
         try {
             log4j.info("bookTicket method - Starts");
             TestReporter.logInfo(logStep, "bookTicket ...");
+            WebDriverUtils.waitForPageLoaded();
 
             selectValueForDepartDateField(departDate);
             selectValueForDepartFromField(departStation);
-            selectValueForArriveAtField(arriveStation);
+            sleep(5);
+            if(!arriveStation.equals(""))
+            {
+                selectValueForArriveAtField(arriveStation);
+            }
             selectValueForSeatTypeField(seatType);
             selectValueForTicketAmountField(amount);
             clickBookTicketButton();

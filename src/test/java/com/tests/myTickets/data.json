@@ -1,0 +1,148 @@
+{
+  "TC_MT_01_02_Check_UI_of_My_Ticket_page": [
+    {
+      "Data": "Data1",
+      "DepartStation": "Sài Gòn",
+      "ArriveStation": "Phan Thiết",
+      "SeatType": "Soft bed with air conditioner"
+    }
+  ],
+  "TC_MT_03_Filter_only_appears_when_ticket_table_has_more_than_6_rows": [
+        {
+          "Data": "Data1",
+          "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+          "ArriveStation": "Phan Thiết-Sài Gòn-Sài Gòn-Sài Gòn-Sài Gòn-Sài Gòn",
+          "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner"
+        }
+  ],
+  "TC_MT_04_Able_to_cancel_ticket": [
+    {
+      "Data": "Data1",
+      "DepartStation": "Sài Gòn",
+      "ArriveStation": "Phan Thiết",
+      "SeatType": "Soft bed with air conditioner"
+    }
+  ],
+  "TC_MT_05_to_010_User_can_filter_ticket": [
+    {
+      "Data": "Data1",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "",
+      "DepartStationFilter": "Nha Trang",
+      "ArriveStationFilter": "",
+      "StatusFilter": ""
+    },
+    {
+      "Data": "Data2",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "",
+      "DepartStationFilter": "",
+      "ArriveStationFilter": "Sài Gòn",
+      "StatusFilter": ""
+    },
+    {
+      "Data": "Data3",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "",
+      "DepartStationFilter": "",
+      "ArriveStationFilter": "",
+      "StatusFilter": "New"
+    },
+    {
+      "Data": "Data4",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "11/27/2022",
+      "DepartStationFilter": "",
+      "ArriveStationFilter": "",
+      "StatusFilter": ""
+    },
+    {
+      "Data": "Data5",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "11/25/2022",
+      "DepartStationFilter": "Nha Trang",
+      "ArriveStationFilter": "Sài Gòn",
+      "StatusFilter": "New"
+    }
+  ],
+  "TC_MT_011_Error_message_displays_when_filtering_with_criteria_not_match_with_any_information_of_ticket": [
+    {
+      "Data": "Data1",
+      "DepartStation": "Sài Gòn-Huế-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "",
+      "DepartStationFilter": "Nha Trang",
+      "ArriveStationFilter": "",
+      "StatusFilter": "",
+      "ErrorMessage": "Sorry, can't find any results that match your filters.\nPlease change the filters and try again."
+    },
+    {
+      "Data": "Data2",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "",
+      "DepartStationFilter": "",
+      "ArriveStationFilter": "Huế",
+      "StatusFilter": "",
+      "ErrorMessage": "Sorry, can't find any results that match your filters.\nPlease change the filters and try again."
+    },
+    {
+      "Data": "Data3",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "",
+      "DepartStationFilter": "",
+      "ArriveStationFilter": "",
+      "StatusFilter": "Paid",
+      "ErrorMessage": "Sorry, can't find any results that match your filters.\nPlease change the filters and try again."
+    },
+    {
+      "Data": "Data4",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "11/05/2022",
+      "DepartStationFilter": "",
+      "ArriveStationFilter": "",
+      "StatusFilter": "",
+      "ErrorMessage": "Sorry, can't find any results that match your filters.\nPlease change the filters and try again."
+    },
+    {
+      "Data": "Data5",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "11/05/2022",
+      "DepartStationFilter": "Nha Trang",
+      "ArriveStationFilter": "Đà Nẵng",
+      "StatusFilter": "Expired",
+      "ErrorMessage": "Sorry, can't find any results that match your filters.\nPlease change the filters and try again."
+    }
+  ],
+  "TC_MT_012_An_error_message_displayed_when_user_enter_wrong_format_date_in_Depart_date_field": [
+    {
+      "Data": "Data1",
+      "DepartStation": "Sài Gòn-Huế-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "30/11/2022",
+      "ErrorMessage": "The date format is wrong, date filter is ignored.\nExample of a proper date: Today is 11/20/2022"
+    },
+    {
+      "Data": "Data2",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "08/40/2022",
+      "ErrorMessage": "The date format is wrong, date filter is ignored.\nExample of a proper date: Today is 11/20/2022"
+    },
+    {
+      "Data": "Data3",
+      "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
+      "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
+      "DepartDateFilter": "2022/15/24",
+      "ErrorMessage": "The date format is wrong, date filter is ignored.\nExample of a proper date: Today is 11/20/2022"
+    }
+  ]
+}

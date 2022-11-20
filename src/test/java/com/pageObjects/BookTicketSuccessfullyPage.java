@@ -29,10 +29,6 @@ public class BookTicketSuccessfullyPage extends BasePage{
     /**
      * Methods
      */
-    public String getBookTicketSuccessfullyText () {
-        return bookTicketSuccessfullyPageHeader.getText();
-    }
-
     public Hashtable<String, String> ticketInformation () {
         Hashtable<String, String> ticketInfo = new Hashtable<String, String>();
         ticketInfo.put("DepartDate", departDate.getText());
