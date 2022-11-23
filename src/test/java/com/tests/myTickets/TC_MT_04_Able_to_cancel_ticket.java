@@ -43,11 +43,15 @@ public class TC_MT_04_Able_to_cancel_ticket extends TestBase {
 
         logStep = TestReporter.logStepInfo(logMethod, "Step #5: Go to My Ticket page");
         BookTicketSuccessfullyPage bookTicketSuccessfullyPage = PageFactory.initElements(Utility.getDriver(), BookTicketSuccessfullyPage.class);
+        String currentURL = WebDriverUtils.getDriver().getCurrentUrl();
+        String ticketID = currentURL.split("id=")[1];
         bookTicketSuccessfullyPage.clickOnMyTicketTab();
 
         logStep = TestReporter.logStepInfo(logMethod, "Step #6: Cancel ticket");
         MyTicketPage myTicketPage = PageFactory.initElements(Utility.getDriver(), MyTicketPage.class);
-        myTicketPage.cancelTicket(logStep, departStation, arriveStation);
+        myTicketPage.cancelTicketByID(logStep, ticketID);
 
+        logStep = TestReporter.logStepInfo(logMethod, "Step #7: Verify that cancel successfully");
+        Assertion.verifyActualAndExpected(logStep, myTicketPage.doesCancelButtonExist(ticketID), false);
     }
 }
