@@ -9,8 +9,10 @@ import com.utility.WebDriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookTicketPage extends BasePage {
@@ -58,6 +60,7 @@ public class BookTicketPage extends BasePage {
     /**
      * Dynamic xpath
      */
+    String xpath_ArriveStationValue = "//select[@name='ArriveStation']/option";
     String seatTypeOptions = "//select[@name='SeatType']/option[%s]";
 
     /**
@@ -147,6 +150,16 @@ public class BookTicketPage extends BasePage {
     public String getSelectedTicketAmount () {
         WebDriverUtils.waitForControl(ticketAmountFirstOption);
         return ticketAmountFirstOption.getText();
+    }
+
+    public List<String> getArriveStationValue(String departStation)
+    {
+        selectValueForDepartFromField(departStation);
+        sleep(2);
+        List<String> arriveStationValue = new ArrayList<>();
+        for(WebElement element : Utility.getDriver().findElements(By.xpath(String.format(xpath_ArriveStationValue, departStation))))
+            arriveStationValue.add(element.getText());
+        return arriveStationValue;
     }
 
     public void clickBookTicketButton(ExtentTest logStep){
