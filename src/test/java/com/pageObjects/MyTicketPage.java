@@ -7,6 +7,7 @@ import com.utility.Utility;
 import com.utility.WebDriverUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -44,6 +45,7 @@ public class MyTicketPage extends BasePage {
     @FindBy(xpath = "//div[@class = 'error message']")
     private WebElement filterErrorMessage;
     String xpath_CancelButton = "//tr/td[count(//th[text()='Depart Station']/preceding-sibling::th) + 1][text()='%s']/..//td[count(//th[text()='Arrive Station']/preceding-sibling::th) + 1][text()='%s']/../td[count(//th[text()='Operation']/preceding-sibling::th) + 1]/descendant::input";
+    String xpath_CancelById = "//input[@type='button'][@onclick='DeleteTicket(%s);']";
     String xpath_FilterResult = "//table[@class = 'MyTable']//td[count(//table[@class='MyTable']//th[text()='%s']/preceding-sibling::th)+1]";
 
     /**
@@ -125,6 +127,23 @@ public class MyTicketPage extends BasePage {
         } catch (Exception e) {
             log4j.error("cancelTicket method - ERROR: ", e);
             TestReporter.logException(logStep, "cancelTicket - ERROR", e);
+        }
+    }
+
+    public void cancelTicketByID(ExtentTest logStep, String ID) {
+        try {
+            log4j.info("cancelTicketByID method - Starts");
+            TestReporter.logInfo(logStep, "Cancel ticket by ID...");
+
+            WebElement cancelButton = WebDriverUtils.getDriver().findElement(By.xpath(String.format(xpath_CancelById, ID)));
+            WebDriverUtils.scrollTillElementVisible(cancelButton);
+            WebDriverUtils.waitForControlBeClickable(cancelButton);
+            cancelButton.click();
+            acceptAlert();
+            log4j.info("cancelTicketByID method - Ends");
+        } catch (Exception e) {
+            log4j.error("cancelTicketByID method - ERROR: ", e);
+            TestReporter.logException(logStep, "cancelTicketByID - ERROR", e);
         }
     }
 
@@ -211,8 +230,13 @@ public class MyTicketPage extends BasePage {
         return WebDriverUtils.doesControlExist(button_ApplyFilter);
     }
 
-    public boolean doesCancelButtonExist(String departStation, String arriveStation) {
-        WebElement cancelButton = WebDriverUtils.getDriver().findElement(By.xpath(String.format(xpath_CancelButton, departStation, arriveStation)));
-        return WebDriverUtils.doesControlExist(cancelButton);
+    public boolean doesCancelButtonExist(String ID) {
+        try{
+            return WebDriverUtils.doesControlExist(WebDriverUtils.getDriver().findElement(By.xpath(String.format(xpath_CancelById, ID))));
+        }
+        catch (NoSuchElementException e)
+        {
+            return false;
+        }
     }
 }

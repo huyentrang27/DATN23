@@ -133,7 +133,7 @@ public class WebDriverUtils extends Utility{
     public static boolean doesControlExist(WebElement element){
         try {
             return element.isDisplayed();
-        } catch (Exception e){
+        } catch (org.openqa.selenium.NoSuchElementException e){
             return false;
         }
     }
