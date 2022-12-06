@@ -159,14 +159,14 @@
       "PIDErrMessage": "Invalid ID length"
     }
   ],
-  "TC_RES_018_Unable_to_rgister_new_account_by_using_PID_contain_special_character": [
-    {
-      "Data": "Data1",
-      "TestPurpose": "Unable to register account with PID length les than 8 or more than 20",
-      "PID": "1234567@@##",
-      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
-      "PIDErrMessage": "Invalid ID length"
-    },
+  "TC_RES_018_Unable_to_register_new_account_by_using_PID_contain_special_character": [
+//    {
+//      "Data": "Data1",
+//      "TestPurpose": "Unable to register account with PID length les than 8 or more than 20",
+//      "PID": "1234567@@##",
+//      "RegisterErrMessage": "There're errors in the form. Please correct the errors and try again.",
+//      "PIDErrMessage": "Invalid ID length"
+//    },
     {
       "Data": "Data2",
       "TestPurpose": "Unable to register account with PID length les than 8 or more than 20",

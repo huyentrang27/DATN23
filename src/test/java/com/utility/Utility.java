@@ -36,8 +36,6 @@ public class Utility {
     public static String reportLocation = OUTPUT_PATH + "report-" + timeStampString + "/";
     public static String reportFilePath = reportLocation + "report-" + timeStampString + ".html";
 
-    public static EmailActions emailActions = new EmailActions();
-
     public static void log4jConfiguration() {
         try {
             log4j = LogFactory.getLog(new Object().getClass().getName());

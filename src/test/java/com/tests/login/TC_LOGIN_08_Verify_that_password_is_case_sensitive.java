@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.*;
 
 public class TC_LOGIN_08_Verify_that_password_is_case_sensitive extends TestBase {
 

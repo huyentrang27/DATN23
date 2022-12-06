@@ -2,7 +2,6 @@ package com.tests.changepassword;
 
 import com.common.CommonMethods;
 import com.common.TestBase;
-import com.pageObjects.BookTicketPage;
 import com.pageObjects.ChangePasswordPage;
 import com.pageObjects.HomePage;
 import com.utility.TestReporter;
@@ -11,7 +10,7 @@ import com.utility.WebDriverUtils;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_CP_01_Check_UI_of_Change_password_page extends TestBase {
 

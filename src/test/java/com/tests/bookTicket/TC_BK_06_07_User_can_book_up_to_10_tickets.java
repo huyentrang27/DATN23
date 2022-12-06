@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_BK_06_07_User_can_book_up_to_10_tickets extends TestBase {
 

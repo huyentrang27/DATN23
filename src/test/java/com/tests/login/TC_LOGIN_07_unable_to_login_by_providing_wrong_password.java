@@ -9,8 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
-import static com.common.Constant.PID;
+import static com.common.GlobalVariables.*;
 
 public class TC_LOGIN_07_unable_to_login_by_providing_wrong_password extends TestBase {
 

@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.*;
 
 public class TC_RES_06_Unable_to_register_new_account_by_using_a_registered_account_before extends TestBase {
 

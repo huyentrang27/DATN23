@@ -2,8 +2,6 @@ package com.tests.timetable;
 
 import com.common.TestBase;
 import com.pageObjects.HomePage;
-import com.pageObjects.LoginPage;
-import com.pageObjects.RegisterPage;
 import com.pageObjects.TimeTablePage;
 import com.utility.TestReporter;
 import com.utility.Utility;
@@ -11,7 +9,7 @@ import com.utility.WebDriverUtils;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_TIME_01_Check_UI_of_Timetable_page extends TestBase {
 

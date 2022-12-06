@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_TP_04_Able_to_book_ticket_after_clicking_on_Book_ticker_button_at_Ticket_Price_page extends TestBase {
 

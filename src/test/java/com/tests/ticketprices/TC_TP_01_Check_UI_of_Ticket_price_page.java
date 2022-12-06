@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_TP_01_Check_UI_of_Ticket_price_page extends TestBase {
 

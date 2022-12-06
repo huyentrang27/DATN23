@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_MT_012_An_error_message_displayed_when_user_enter_wrong_format_date_in_Depart_date_field extends TestBase {
 
@@ -57,6 +57,6 @@ public class TC_MT_012_An_error_message_displayed_when_user_enter_wrong_format_d
         myTicketPage.filterTicket(logStep, "", "", departDateFilter, "");
 
         logStep = TestReporter.logStepInfo(logMethod, "Step #6: Verify error message display");
-        Assertion.verifyActualAndExpected(logStep, myTicketPage.getErrorMessage(), data.get("ErrorMessage"));
+        Assertion.verifyActualAndExpected(logStep, myTicketPage.getErrorMessage(), String.format(data.get("ErrorMessage"), CommonMethods.today()));
     }
 }

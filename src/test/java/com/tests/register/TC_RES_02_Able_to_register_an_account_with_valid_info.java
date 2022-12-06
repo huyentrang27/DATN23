@@ -10,7 +10,8 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.RAILWAY_HOMEPAGE_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_RES_02_Able_to_register_an_account_with_valid_info extends TestBase {
 

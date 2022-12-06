@@ -23,21 +23,11 @@ public class GlobalVariables {
     public static int TOTAL_FAILED = 0;
     public static int TOTAL_SKIPPED = 0;
 
-    //Gmail
-    public static final String ALL_MAIL_FOLDER = "Inbox";
-
-    //  ssh
-    public static final int SSH_REMOTE_PORT = 22;
-    public static final int LOCAL_PORT = 3306;
-    public static final String REMOTE_HOST =  "allfilm.mediadnnb.codes";
-    public static final String SSH_USERNAME = "root";
-
-    //Database
-//    public static final String JDBC_DRIVER = "org.postgresql.Driver";
-    public static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    public static final String DB_URL = "jdbc:mysql://" + REMOTE_HOST+ ":" + LOCAL_PORT+ "/db_main";
-    //    public static final String DB_URL = "jdbc:mysql://" + REMOTE_HOST+ ":" + LOCAL_PORT+ "/db_main?useSSL=false&serverTimezone=UTC";
-    public static final int DB_REMOTE_PORT = 3306;
-    public static final String DB_USERNAME = "root";
-    public static final String DB_PASSWORD = "root";
+    //URL path
+    public static final String RAILWAY_URL = "http://www.raillog.somee.com";
+    public static final String RAILWAY_HOMEPAGE_URL = "http://www.raillog.somee.com/Page/HomePage.cshtml";
+    //data test
+    public static String EMAIL_ADDRESS = "tnguyen@gmail.com";
+    public static String PASSWORD = "Test@123456";
+    public static String PID = "123456789";
 }

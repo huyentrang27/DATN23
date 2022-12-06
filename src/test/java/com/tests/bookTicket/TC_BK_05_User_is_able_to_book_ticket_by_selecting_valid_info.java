@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_BK_05_User_is_able_to_book_ticket_by_selecting_valid_info extends TestBase {
 

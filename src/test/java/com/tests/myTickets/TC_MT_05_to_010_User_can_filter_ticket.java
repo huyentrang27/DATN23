@@ -18,7 +18,7 @@ import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_MT_05_to_010_User_can_filter_ticket extends TestBase {
 

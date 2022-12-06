@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.*;
 
 public class TC_RES_013_Unable_to_register_new_account_when_password_and_confirm_password_field_are_not_match extends TestBase {
 
@@ -17,6 +17,7 @@ public class TC_RES_013_Unable_to_register_new_account_when_password_and_confirm
     public void TC_RES_013(Hashtable<String, String> data) {
         String password = DataFaker.generateTimeStampString("yymmddssmmhh");
         String confirmPassword = DataFaker.generateTimeStampString("hhmmssddmmyy");
+        String emailAddress = DataFaker.generateRandomEmail(EMAIL_ADDRESS);
 
         logStep = TestReporter.logStepInfo(logMethod, "Step #1: Navigate to Railway");
         WebDriverUtils.navigateToTestSite(logStep, RAILWAY_URL);
@@ -27,7 +28,7 @@ public class TC_RES_013_Unable_to_register_new_account_when_password_and_confirm
 
         logStep = TestReporter.logStepInfo(logMethod, "Step #3: Verify that error message displays when user register by using invalid email");
         RegisterPage registerPage = PageFactory.initElements(Utility.getDriver(), RegisterPage.class);
-        registerPage.register(logStep, EMAIL_ADDRESS, password, confirmPassword, PID);
+        registerPage.register(logStep, emailAddress, password, confirmPassword, PID);
         Assertion.verifyActualAndExpected(logStep, registerPage.getRegisterErrorMessage(), data.get("RegisterErrMessage"));
         Assertion.verifyActualAndExpected(logStep, registerPage.getConfirmPasswordErrorMessage(), data.get("ConfirmPasswordErrMessage"));
 

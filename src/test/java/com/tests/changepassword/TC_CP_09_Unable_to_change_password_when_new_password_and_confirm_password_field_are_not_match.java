@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.*;
 
 public class TC_CP_09_Unable_to_change_password_when_new_password_and_confirm_password_field_are_not_match extends TestBase {
 

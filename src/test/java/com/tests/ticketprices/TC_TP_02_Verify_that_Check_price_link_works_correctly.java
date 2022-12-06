@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_TP_02_Verify_that_Check_price_link_works_correctly extends TestBase {
 

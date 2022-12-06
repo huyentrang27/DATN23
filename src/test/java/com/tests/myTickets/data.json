@@ -128,21 +128,21 @@
       "DepartStation": "Sài Gòn-Huế-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
       "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
       "DepartDateFilter": "30/11/2022",
-      "ErrorMessage": "The date format is wrong, date filter is ignored.\nExample of a proper date: Today is 11/20/2022"
+      "ErrorMessage": "The date format is wrong, date filter is ignored.\nExample of a proper date: Today is %s"
     },
     {
       "Data": "Data2",
       "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
       "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
       "DepartDateFilter": "08/40/2022",
-      "ErrorMessage": "The date format is wrong, date filter is ignored.\nExample of a proper date: Today is 11/20/2022"
+      "ErrorMessage": "The date format is wrong, date filter is ignored.\nExample of a proper date: Today is %s2"
     },
     {
       "Data": "Data3",
       "DepartStation": "Sài Gòn-Nha Trang-Đà Nẵng-Huế-Quảng Ngãi-Phan Thiết",
       "SeatType": "Hard seat-Soft seat-Soft seat with air conditioner-Hard bed-Soft bed-Soft bed with air conditioner",
       "DepartDateFilter": "2022/15/24",
-      "ErrorMessage": "The date format is wrong, date filter is ignored.\nExample of a proper date: Today is 11/20/2022"
+      "ErrorMessage": "The date format is wrong, date filter is ignored.\nExample of a proper date: Today is %s"
     }
   ]
 }

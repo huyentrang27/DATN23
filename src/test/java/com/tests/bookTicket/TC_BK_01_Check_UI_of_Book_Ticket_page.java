@@ -10,12 +10,11 @@ import com.utility.WebDriverUtils;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_BK_01_Check_UI_of_Book_Ticket_page extends TestBase {
 

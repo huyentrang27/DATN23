@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.*;
 
 public class TC_RES_08_Unable_to_register_account_with_password_length_less_than_6_or_more_than_32 extends TestBase {
     @Test(dataProvider = "getDataForTest", description = "Unable to register account with email length les than 6 or more than 32")

@@ -1,6 +1,7 @@
 package com.tests.changepassword;
 
 import com.common.CommonMethods;
+import com.common.GlobalVariables;
 import com.common.TestBase;
 import com.pageObjects.ChangePasswordPage;
 import com.pageObjects.HomePage;
@@ -10,12 +11,13 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.PID;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_CP_03_User_is_able_to_change_password_by_providing_valid_information extends TestBase {
     @Test(dataProvider = "getDataForTest", description = "User is able to change password by providing valid information")
     public void TC_CP_03(Hashtable<String, String> data) {
-        String emailAddress = DataFaker.generateRandomEmail(EMAIL_ADDRESS);
+        String emailAddress = DataFaker.generateRandomEmail(GlobalVariables.EMAIL_ADDRESS);
         String password = data.get("Password");
         String newPassword = data.get("NewPassword");;
 

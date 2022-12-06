@@ -8,9 +8,7 @@ import com.utility.*;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import java.util.Hashtable;
-
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.RAILWAY_URL;
 
 public class TC_RES_01_Check_UI_of_Register_page extends TestBase {
 

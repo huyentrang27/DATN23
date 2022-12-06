@@ -12,7 +12,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.PASSWORD;
+import static com.common.GlobalVariables.PID;
 import static com.utility.Utility.log4j;
 
 public class CommonMethods {
@@ -37,7 +38,7 @@ public class CommonMethods {
 
     public static void login(ExtentTest logStep){
         try{
-            String emailAddress = DataFaker.generateRandomEmail(EMAIL_ADDRESS);
+            String emailAddress = DataFaker.generateRandomEmail(GlobalVariables.EMAIL_ADDRESS);
             log4j.info("login - Starts");
             TestReporter.logInfo(logStep, "login ...");
 
@@ -107,6 +108,16 @@ public class CommonMethods {
 
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DATE, i);
+
+        Date currentDatePlusThree = c.getTime();
+        return dateFormat.format(currentDatePlusThree);
+    }
+
+    public static String today(){
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE, 0);
 
         Date currentDatePlusThree = c.getTime();
         return dateFormat.format(currentDatePlusThree);

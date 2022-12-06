@@ -7,8 +7,7 @@ import com.utility.*;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import static com.common.Constant.*;
-import static com.common.Constant.RAILWAY_HOMEPAGE_URL;
+import static com.common.GlobalVariables.*;
 
 public class TC_LOGIN_03_Able_to_login_with_valid_info extends TestBase {
 

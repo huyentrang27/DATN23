@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.*;
 
 public class TC_CP_04_05_User_is_unable_to_Change_Password_by_leaving_Current_password_field_empty extends TestBase {
 

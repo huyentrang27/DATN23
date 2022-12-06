@@ -12,7 +12,8 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.RAILWAY_URL;
+import static com.common.GlobalVariables.RAILWAY_URL;
+
 
 public class TC_TIME_04_Verify_that_book_ticket_link_work_correctly extends TestBase {
     @Test(dataProvider = "getDataForTest", description = "Verify book ticket link works correctly")

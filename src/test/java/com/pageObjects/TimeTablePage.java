@@ -18,7 +18,6 @@ public class TimeTablePage extends BasePage {
      */
     @FindBy(xpath = "//div[@id='content']//h1")
     private WebElement header;
-
     @FindBy(xpath = "//table//tr[@class = 'TableSmallHeader']/th[contains(text(), 'No.')]")
     private WebElement column_No;
     @FindBy(xpath = "//table//tr[@class = 'TableSmallHeader']/th[contains(text(), 'Depart Station')]")

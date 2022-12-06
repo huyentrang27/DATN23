@@ -1,17 +1,15 @@
 package com.tests.login;
 
 import com.common.TestBase;
-import com.pageObjects.ForgotPasswordPage;
 import com.pageObjects.HomePage;
 import com.pageObjects.LoginPage;
-import com.pageObjects.RegisterPage;
 import com.utility.*;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.*;
 
 public class TC_LOGIN_05_Unable_to_login_with_unregister_account extends TestBase {
 

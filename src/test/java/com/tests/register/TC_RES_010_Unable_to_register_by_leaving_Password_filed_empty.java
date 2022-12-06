@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
+import static com.common.GlobalVariables.*;
 
 public class TC_RES_010_Unable_to_register_by_leaving_Password_filed_empty extends TestBase {
 

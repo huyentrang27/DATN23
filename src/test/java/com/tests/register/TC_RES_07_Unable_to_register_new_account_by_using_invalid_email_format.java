@@ -9,8 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-import static com.common.Constant.*;
-import static com.common.Constant.PID;
+import static com.common.GlobalVariables.*;
 
 public class TC_RES_07_Unable_to_register_new_account_by_using_invalid_email_format extends TestBase {
 
